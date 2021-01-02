@@ -1,0 +1,186 @@
+/* IMPORTING A DIGITAL FONT FOR DIGITAL CLOCK - CAN USE THIS FOR CALCULATOR AS WELL */
+
+@font-face {
+    font-family: 'Digital';
+    src: url('../img/ds_digital/DS-DIGIB.TTF')
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: #018DED url('https://images.unsplash.com/photo-1475592827823-4e8548bbc506?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    text-align: center;
+    font-size: 10px;
+    font-family: 'Digital';
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: 2rem;
+    display: flex;
+    flex: 1;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.clock {
+    width: 30rem;
+    height: 30rem;
+    /*THIS WHOLE CODE BLOCK IS A TOTAL RIP FROM: https://gist.github.com/stereokai/36dc0095b9d24ce93b045e2ddc60d7a0 I HAVE NO IDEA HOW IT WORKS - DON'T ASK ME*/
+    border: double 10px transparent;
+    border-radius: 50%;
+    background-image: linear-gradient(white, white), radial-gradient(circle at top left, white, black);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    /*UNTIL HERE*/
+    margin: 50px auto;
+    position: relative;
+    padding: 0;
+    background-color: whitesmoke;
+    box-shadow: inset 0.2rem 0.5rem 3rem 1rem rgba(61, 61, 59, 0.548), 0.5rem 0.5rem 3rem 1rem black;
+}
+
+.clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border-radius: 50%;
+    transform: translateY(-3px);
+    /* account for the height of the clock hands */
+}
+
+.clockNumber {
+    position: absolute;
+    width: 45%;
+    transform-origin: left;
+    top: 45%;
+    left: 49%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+
+span {
+    font-size: 3rem;
+    font-family: sans-serif;
+}
+
+.hand {
+    width: 40%;
+    height: 6px;
+    background: black;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    border-radius: 30%;
+    transform: rotate(90deg);
+    transform-origin: right;
+    box-shadow: 3px 1px 5px 2px rgba(128, 128, 128, 0.561);
+}
+
+.second-hand {
+    height: 2px;
+    background-color: rgb(199, 2, 2);
+    /*BECAUSE I MADE IT SHORTER...*/
+    top: 51.5%;
+}
+
+.min-hand {
+    /* SHORTER THAN THE SECOND HAND */
+    width: 35%;
+}
+
+.hour-hand {
+    /* FATTER AND SHORTER */
+    height: 7px;
+    width: 30%;
+    background-color: rgb(63, 62, 62);
+}
+
+/* A DUMB DOT TO MAKE IT LOOK BETTER(?) */
+.dot {
+    background-color: black;
+    border: 3px outset rgb(78, 77, 77);
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    right: 48%;
+    box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.239);
+}
+
+/*DIGITAL CLOCK*/
+
+#digitalClock {
+    border-radius: 5%;
+    border: 15px outset rgb(32, 32, 32);
+    width: 70rem;
+    height: 30rem;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    box-shadow: inset 0.2rem 0.5rem 3rem 1rem rgb(61, 61, 59), 0.5rem 0.5rem 3rem 1rem black;
+}
+
+.digitalClockFace {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    background-color: black;
+    margin: 0;
+    border: 5px inset gray;
+    border-radius: 2%;
+}
+
+.digitalClockFace>section {
+    background-color: #000000;
+background-image: linear-gradient(328deg, #000000 0%, #2533304f 28%, #2533304f 72%, #080808 100%);
+
+    border: 3px inset rgb(119, 119, 119);
+    border-radius: 10%;
+    height: 100%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+}
+
+.digitalClockFace>section>h1 {
+    font-size: 10rem;
+}
+
+.date {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start
+}
+
+.date h2 {
+    background-color: #000000;
+background-image: linear-gradient(328deg, #000000 0%, #2533304f 28%, #2533304f 72%, #080808 100%);
+    width: 100%;
+    height: 25%;
+    margin: 0;
+    border: 3px inset rgb(87, 87, 87);
+    border-right: none;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.date h2:nth-child(4) {
+    border: none;
+}
+
